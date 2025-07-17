@@ -1,6 +1,6 @@
 {
   "presentationTable" : {
-    "name" : "Customer Regions",
+    "name" : "CustomerRegions",
     "presentationColumns" : [ {
       "name" : "Address1",
       "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D3 Customers.Address1"
