@@ -1,0 +1,228 @@
+{
+  "logicalTable" : {
+    "name" : "F1 Revenue",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Units",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F1 Revenue",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.F1 Revenue.UNITS" ]
+          }
+        }, {
+          "logicalTableSource" : "F2 Revenue Aggregate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.F2 Revenue Aggregate.UNITS" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT"
+      }
+    }, {
+      "name" : "Revenue",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F1 Revenue",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.F1 Revenue.REVENUE" ]
+          }
+        }, {
+          "logicalTableSource" : "F2 Revenue Aggregate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.F2 Revenue Aggregate.REVENUE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Actual Unit Price",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 / %2",
+          "expressionObjects" : [ "logicalColumn:Warsztaty BM.F1 Revenue.Revenue", "logicalColumn:Warsztaty BM.F1 Revenue.Units" ]
+        }
+      }
+    }, {
+      "name" : "Revenue Rank",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "RANK(%1)",
+          "expressionObjects" : [ "logicalColumn:Warsztaty BM.F1 Revenue.Revenue" ]
+        }
+      }
+    }, {
+      "name" : "Product Total Revenue",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F1 Revenue",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.F1 Revenue.REVENUE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "NONE"
+      }
+    }, {
+      "name" : "Product Type Revenue",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F1 Revenue",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.F1 Revenue.REVENUE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "NONE"
+      }
+    }, {
+      "name" : "Product Share",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 / %2",
+          "expressionObjects" : [ "logicalColumn:Warsztaty BM.F1 Revenue.Revenue", "logicalColumn:Warsztaty BM.F1 Revenue.Product Total Revenue" ]
+        }
+      }
+    }, {
+      "name" : "Prod Key",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F2 Revenue Aggregate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.F2 Revenue Aggregate.PROD_KEY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill Qtr Key",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F2 Revenue Aggregate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.F2 Revenue Aggregate.BILL_QTR_KEY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Month Ago Revenue",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "AGO(%1 , %2 , 1)",
+          "expressionObjects" : [ "logicalColumn:Warsztaty BM.F1 Revenue.Revenue", "logicalLevel:Warsztaty BM.D1 Time.Month" ]
+        }
+      }
+    }, {
+      "name" : "Year To Date Revenue",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "TODATE(%1 , %2 )",
+          "expressionObjects" : [ "logicalColumn:Warsztaty BM.F1 Revenue.Revenue", "logicalLevel:Warsztaty BM.D1 Time.Year" ]
+        }
+      }
+    }, {
+      "name" : "Revenue 3 Period Rolling Sum",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "PERIODROLLING(%1 , -2, 0)",
+          "expressionObjects" : [ "logicalColumn:Warsztaty BM.F1 Revenue.Revenue" ]
+        }
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "F1 Revenue",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:MojaBazaWarsztatowa.WARSZTATOAC.F1 Revenue" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Warsztaty BM.D1 Time.Szczegóły", "logicalLevel:Warsztaty BM.D3 Customers.Szczegóły", "logicalLevel:Warsztaty BM.D20 Products.Szczegóły", "logicalLevel:Warsztaty BM.D5 Sales Rep.Sales Rep Detail", "logicalLevel:Warsztaty BM.D2 Products.Szczegóły" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "F2 Revenue Aggregate",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:MojaBazaWarsztatowa.WARSZTATOAC.F2 Revenue Aggregate" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Warsztaty BM.D2 Products.Razem", "logicalLevel:Warsztaty BM.D1 Time.Qtr", "logicalLevel:Warsztaty BM.D20 Products.Razem", "logicalLevel:Warsztaty BM.D3 Customers.Razem" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Warsztaty BM.D1 Time",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE",
+      "drivingTable" : "None"
+    }, {
+      "rightTable" : "logicalTable:Warsztaty BM.D2 Products",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE",
+      "drivingTable" : "None"
+    }, {
+      "rightTable" : "logicalTable:Warsztaty BM.D3 Customers",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE",
+      "drivingTable" : "None"
+    }, {
+      "rightTable" : "logicalTable:Warsztaty BM.D20 Products",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE",
+      "drivingTable" : "None"
+    }, {
+      "rightTable" : "logicalTable:Warsztaty BM.D5 Sales Rep",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE",
+      "drivingTable" : "None"
+    } ]
+  }
+}

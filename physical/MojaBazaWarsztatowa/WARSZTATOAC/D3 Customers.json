@@ -1,0 +1,17 @@
+{
+  "physicalTable" : {
+    "name" : "D3 Customers",
+    "sourceTable" : "physicalTable:MojaBazaWarsztatowa.WARSZTATOAC.SAMP_CUSTOMERS_D",
+    "overrideSourceCacheSetting" : false,
+    "joins" : [ {
+      "rightTable" : "physicalTable:MojaBazaWarsztatowa.WARSZTATOAC.D4 Addresses",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.D3 Customers.ADDRESS_KEY",
+        "rightColumn" : "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.D4 Addresses.ADDRESS_KEY"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    } ]
+  }
+}

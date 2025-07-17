@@ -1,0 +1,17 @@
+{
+  "physicalTable" : {
+    "name" : "D51 Sales Rep Parent Child",
+    "sourceTable" : "physicalTable:MojaBazaWarsztatowa.WARSZTATOAC.SAMP_EMPL_PARENT_CHILD_MAP",
+    "overrideSourceCacheSetting" : false,
+    "joins" : [ {
+      "rightTable" : "physicalTable:MojaBazaWarsztatowa.WARSZTATOAC.D50 Sales Rep",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.D51 Sales Rep Parent Child.ANCESTOR_KEY",
+        "rightColumn" : "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.D50 Sales Rep.EMPLOYEE_KEY"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    } ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "presentationTable" : {
+    "name" : "Sales Rep",
+    "presentationColumns" : [ {
+      "name" : "Sales Rep Name",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D5 Sales Rep.Sales Rep Name"
+    }, {
+      "name" : "Sales Rep Number",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D5 Sales Rep.Sales Rep Number"
+    }, {
+      "name" : "Hire Date",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D5 Sales Rep.Hire Date"
+    }, {
+      "name" : "Manager Number",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D5 Sales Rep.Manager Number"
+    }, {
+      "name" : "Position Key",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D5 Sales Rep.Position Key"
+    }, {
+      "name" : "Sales Rep Type",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D5 Sales Rep.Sales Rep Type"
+    }, {
+      "name" : "Position",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D5 Sales Rep.Position"
+    }, {
+      "name" : "Position Level",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D5 Sales Rep.Position Level"
+    }, {
+      "name" : "Closure Distance",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D5 Sales Rep.Closure Distance"
+    } ],
+    "hierarchies" : [ {
+      "name" : "D5 Sales Rep",
+      "sourceLogicalTable" : "logicalTable:Warsztaty BM.D5 Sales Rep",
+      "displayColumn" : "presentationColumn:Warsztaty.Sales Rep.Sales Rep Name"
+    } ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "presentationTable" : {
+    "name" : "Time",
+    "presentationColumns" : [ {
+      "name" : "Calendar Date",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D1 Time.Calendar Date"
+    }, {
+      "name" : "Per Name Half",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D1 Time.Per Name Half"
+    }, {
+      "name" : "Per Name Month",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D1 Time.Per Name Month"
+    }, {
+      "name" : "Per Name Qtr",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D1 Time.Per Name Qtr"
+    }, {
+      "name" : "Per Name Week",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D1 Time.Per Name Week"
+    }, {
+      "name" : "Per Name Year",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D1 Time.Per Name Year"
+    } ],
+    "hierarchies" : [ {
+      "name" : "H1",
+      "sourceLogicalTable" : "logicalTable:Warsztaty BM.D1 Time",
+      "localization" : { },
+      "levels" : [ {
+        "name" : "Razem",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D1 Time.Razem",
+        "localization" : { }
+      }, {
+        "name" : "Year",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D1 Time.Year",
+        "displayColumn" : "presentationColumn:Warsztaty.Time.Per Name Year",
+        "localization" : { }
+      }, {
+        "name" : "Half Year",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D1 Time.Half Year",
+        "displayColumn" : "presentationColumn:Warsztaty.Time.Per Name Half",
+        "localization" : { }
+      }, {
+        "name" : "Qtr",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D1 Time.Qtr",
+        "displayColumn" : "presentationColumn:Warsztaty.Time.Per Name Qtr",
+        "localization" : { }
+      }, {
+        "name" : "Month",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D1 Time.Month",
+        "displayColumn" : "presentationColumn:Warsztaty.Time.Per Name Month",
+        "localization" : { }
+      }, {
+        "name" : "Week",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D1 Time.Week",
+        "displayColumn" : "presentationColumn:Warsztaty.Time.Per Name Week",
+        "localization" : { }
+      }, {
+        "name" : "Szczegóły",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D1 Time.Szczegóły",
+        "displayColumn" : "presentationColumn:Warsztaty.Time.Calendar Date",
+        "localization" : { }
+      } ]
+    } ]
+  }
+}

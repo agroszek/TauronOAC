@@ -1,0 +1,24 @@
+{
+  "initBlock" : {
+    "name" : "Current Periods",
+    "type" : "GLOBAL",
+    "connectionPool" : "connectionPool:MojaBazaWarsztatowa.New Connection Pool_1",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT CALENDAR_DATE, PER_NAME_MONTH, PER_NAME_YEAR FROM WARSZTATOAC.SAMP_TIME_DAY_D WHERE CALENDAR_DATE = (SELECT MAX(BILL_DAY_DT) FROM WARSZTATOAC.SAMP_REVENUE_F)\n"
+    } ],
+    "variables" : [ {
+      "name" : "CurrentDay"
+    }, {
+      "name" : "CurrentMonth"
+    }, {
+      "name" : "CurrentYear"
+    } ],
+    "runSchedule" : {
+      "interval" : 1,
+      "intervalUnit" : "HOURS",
+      "startingOn" : "2025-07-16 12:16:44.473"
+    },
+    "disable" : false
+  }
+}

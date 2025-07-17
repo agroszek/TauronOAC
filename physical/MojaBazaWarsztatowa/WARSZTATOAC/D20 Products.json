@@ -1,0 +1,7 @@
+{
+  "physicalTable" : {
+    "name" : "D20 Products",
+    "sourceTable" : "physicalTable:MojaBazaWarsztatowa.WARSZTATOAC.SAMP_PRODUCTS_DR",
+    "overrideSourceCacheSetting" : false
+  }
+}

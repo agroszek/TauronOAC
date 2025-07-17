@@ -1,0 +1,26 @@
+{
+  "physicalTable" : {
+    "name" : "F2 Revenue Aggregate",
+    "sourceTable" : "physicalTable:MojaBazaWarsztatowa.WARSZTATOAC.SAMP_REVENUE_FA2",
+    "overrideSourceCacheSetting" : false,
+    "joins" : [ {
+      "rightTable" : "physicalTable:MojaBazaWarsztatowa.WARSZTATOAC.D2 Products",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.F2 Revenue Aggregate.PROD_KEY",
+        "rightColumn" : "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.D2 Products.PROD_KEY"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    }, {
+      "rightTable" : "physicalTable:MojaBazaWarsztatowa.WARSZTATOAC.D1 Time QTR Grain",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.F2 Revenue Aggregate.BILL_QTR_KEY",
+        "rightColumn" : "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.D1 Time QTR Grain.QTR_KEY"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    } ]
+  }
+}

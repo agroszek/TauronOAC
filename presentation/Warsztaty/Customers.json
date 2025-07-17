@@ -1,0 +1,18 @@
+{
+  "presentationTable" : {
+    "name" : "Customers",
+    "presentationColumns" : [ {
+      "name" : "Cust Key",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D3 Customers.Cust Key"
+    }, {
+      "name" : "Name",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D3 Customers.Name"
+    }, {
+      "name" : "Latitude",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D3 Customers.Latitude"
+    }, {
+      "name" : "Longitude",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D3 Customers.Longitude"
+    } ]
+  }
+}

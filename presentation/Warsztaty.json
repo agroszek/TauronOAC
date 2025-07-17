@@ -1,0 +1,21 @@
+{
+  "subjectArea" : {
+    "name" : "Warsztaty",
+    "sourceBusinessModel" : "businessModel:Warsztaty BM",
+    "tableOrder" : [ {
+      "name" : "presentationTable:Warsztaty.Time"
+    }, {
+      "name" : "presentationTable:Warsztaty.Customers"
+    }, {
+      "name" : "presentationTable:Warsztaty.Base Facts"
+    }, {
+      "name" : "presentationTable:Warsztaty.Products"
+    }, {
+      "name" : "presentationTable:Warsztaty.Customer Regions"
+    }, {
+      "name" : "presentationTable:Warsztaty.Sales Rep"
+    }, {
+      "name" : "presentationTable:Warsztaty.Products (Ragged)"
+    } ]
+  }
+}

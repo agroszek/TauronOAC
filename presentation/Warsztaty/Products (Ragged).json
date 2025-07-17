@@ -1,0 +1,48 @@
+{
+  "presentationTable" : {
+    "name" : "Products (Ragged)",
+    "presentationColumns" : [ {
+      "name" : "Prod Key",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D20 Products.Prod Key"
+    }, {
+      "name" : "Prod Dsc",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D20 Products.Prod Dsc"
+    }, {
+      "name" : "Type",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D20 Products.Type"
+    }, {
+      "name" : "Lob",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D20 Products.Lob"
+    }, {
+      "name" : "Brand",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D20 Products.Brand"
+    }, {
+      "name" : "Total Value",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D20 Products.Total Value"
+    } ],
+    "hierarchies" : [ {
+      "name" : "H1",
+      "sourceLogicalTable" : "logicalTable:Warsztaty BM.D20 Products",
+      "levels" : [ {
+        "name" : "Razem",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D20 Products.Razem"
+      }, {
+        "name" : "Product Brand",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D20 Products.Product Brand",
+        "displayColumn" : "presentationColumn:Warsztaty.Products (Ragged).Brand"
+      }, {
+        "name" : "Product LOB",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D20 Products.Product LOB",
+        "displayColumn" : "presentationColumn:Warsztaty.Products (Ragged).Lob"
+      }, {
+        "name" : "Product Type",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D20 Products.Product Type",
+        "displayColumn" : "presentationColumn:Warsztaty.Products (Ragged).Type"
+      }, {
+        "name" : "Szczegóły",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D20 Products.Szczegóły",
+        "displayColumn" : "presentationColumn:Warsztaty.Products.Product"
+      } ]
+    } ]
+  }
+}

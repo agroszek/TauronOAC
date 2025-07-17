@@ -1,0 +1,55 @@
+{
+  "presentationTable" : {
+    "name" : "Products",
+    "presentationColumns" : [ {
+      "name" : "Brand",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D2 Products.Brand"
+    }, {
+      "name" : "Product",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D2 Products.Prod Dsc"
+    }, {
+      "name" : "Type",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D2 Products.Type"
+    }, {
+      "name" : "Line of Business",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D2 Products.Lob"
+    }, {
+      "name" : "Sequence",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D2 Products.Sequence"
+    }, {
+      "name" : "Brand Key",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D2 Products.Brand Key"
+    }, {
+      "name" : "Lob Key",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D2 Products.Lob Key"
+    }, {
+      "name" : "Type Key",
+      "sourceLogicalColumn" : "logicalColumn:Warsztaty BM.D2 Products.Type Key"
+    } ],
+    "hierarchies" : [ {
+      "name" : "H1",
+      "sourceLogicalTable" : "logicalTable:Warsztaty BM.D2 Products",
+      "localization" : { },
+      "levels" : [ {
+        "name" : "Razem",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D2 Products.Razem",
+        "localization" : { }
+      }, {
+        "name" : "Product Brand",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D2 Products.Product Brand",
+        "displayColumn" : "presentationColumn:Warsztaty.Products.Brand",
+        "localization" : { }
+      }, {
+        "name" : "Product LOB",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D2 Products.Product LOB",
+        "displayColumn" : "presentationColumn:Warsztaty.Products.Line of Business",
+        "localization" : { }
+      }, {
+        "name" : "Product Type",
+        "sourceLogicalLevel" : "logicalLevel:Warsztaty BM.D2 Products.Product Type",
+        "displayColumn" : "presentationColumn:Warsztaty.Products.Type",
+        "localization" : { }
+      } ]
+    } ]
+  }
+}

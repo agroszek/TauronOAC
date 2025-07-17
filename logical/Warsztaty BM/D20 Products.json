@@ -1,0 +1,152 @@
+{
+  "logicalTable" : {
+    "name" : "D20 Products",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Prod Key" ],
+    "logicalColumns" : [ {
+      "name" : "Prod Key",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D20 Products",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.D20 Products.PROD_KEY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Szczegóły"
+    }, {
+      "name" : "Prod Dsc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D20 Products",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.D20 Products.PROD_DSC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Szczegóły"
+    }, {
+      "name" : "Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D20 Products",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.D20 Products.TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Product Type"
+    }, {
+      "name" : "Lob",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D20 Products",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.D20 Products.LOB" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Product LOB"
+    }, {
+      "name" : "Brand",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D20 Products",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.D20 Products.BRAND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Product Brand"
+    }, {
+      "name" : "Total Value",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D20 Products",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MojaBazaWarsztatowa.WARSZTATOAC.D20 Products.TOTAL_VALUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Szczegóły"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "D20 Products",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:MojaBazaWarsztatowa.WARSZTATOAC.D20 Products" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Warsztaty BM.D20 Products.Szczegóły" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Razem",
+      "ragged" : true,
+      "skipped" : true,
+      "logicalLevels" : [ {
+        "name" : "Razem",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Szczegóły",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Prod Key" ]
+      }, {
+        "name" : "Product Brand",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Brand" ],
+        "displayKey" : "Brand"
+      }, {
+        "name" : "Product LOB",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Lob" ],
+        "displayKey" : "Lob"
+      }, {
+        "name" : "Product Type",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Type" ],
+        "displayKey" : "Type"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "H1",
+        "levels" : [ "Razem", "Product Brand", "Product LOB", "Product Type", "Szczegóły" ]
+      } ]
+    }
+  }
+}
